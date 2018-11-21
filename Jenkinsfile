@@ -29,6 +29,11 @@
  				  sh 'mvn -f papi/pom.xml compile'
       }
     }
+      stage("Compile eAPI") {
+      steps {
+ 				  sh 'mvn -f eapi/pom.xml compile'
+      }
+    }
     stage("Finishing Task") {
       steps {
         echo "Deployment Completed on CH..."
