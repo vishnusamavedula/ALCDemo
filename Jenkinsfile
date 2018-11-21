@@ -21,7 +21,7 @@
     }
       stage("Compile sAPI") {
       steps {
- 				  sh 'mvn -f ALCDemo/sapi/pom.xml compile'
+ 				  sh 'mvn -f /sapi/pom.xml compile'
       }
     }
     stage("Finishing Task") {
