@@ -11,7 +11,7 @@
         echo "building container..."
       }
     }
-    stage("Test MVN") {
+    stage("Test maven") {
       steps {
  				  sh '''
             echo "Java_Home = $(java -version)"
@@ -19,19 +19,28 @@
           '''
       }
     }
-      stage("Compile sAPI") {
-      steps {
- 				  sh 'mvn -f sapi/pom.xml compile'
+      stage("Deploying sAPI") {
+      environment {
+        ANYPOINT_CREDENTIALS = credentials('anypoint.credentials')
+      }
+        steps {
+ 				  sh 'mvn -f sapi/pom.xml clean package deploy -Dmule.username=${ANYPOINT_CREDENTIALS_USR} -Dmule.password=${ANYPOINT_CREDENTIALS_PSW} -Dmule.URL=https://anypoint.mulesoft.com -DmuleDeploy'
       }
     }
-      stage("Compile pAPI") {
-      steps {
- 				  sh 'mvn -f papi/pom.xml compile'
+      stage("Deploying pAPI") {
+      environment {
+        ANYPOINT_CREDENTIALS = credentials('anypoint.credentials')
+      }
+        steps {
+ 				  sh 'mvn -f papi/pom.xml clean package deploy -Dmule.username=${ANYPOINT_CREDENTIALS_USR} -Dmule.password=${ANYPOINT_CREDENTIALS_PSW} -Dmule.URL=https://anypoint.mulesoft.com -DmuleDeploy'
       }
     }
-      stage("Compile eAPI") {
-      steps {
- 				  sh 'mvn -f eapi/pom.xml compile'
+      stage("Deploying eAPI") {
+      environment {
+        ANYPOINT_CREDENTIALS = credentials('anypoint.credentials')
+      }
+        steps {
+ 				  sh 'mvn -f eapi/pom.xml clean package deploy -Dmule.username=${ANYPOINT_CREDENTIALS_USR} -Dmule.password=${ANYPOINT_CREDENTIALS_PSW} -Dmule.URL=https://anypoint.mulesoft.com -DmuleDeploy'
       }
     }
     stage("Finishing Task") {
