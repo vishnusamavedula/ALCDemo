@@ -23,7 +23,11 @@
         ANYPOINT_CREDENTIALS = credentials('anypoint.credentials')
       }
         steps {
+<<<<<<< HEAD
           sh 'mvn -f sapi/pom.xml clean package deploy -Dmule.username=${ANYPOINT_CREDENTIALS_USR} -Dmule.password=${ANYPOINT_CREDENTIALS_PSW} -Dmule.URL=https://anypoint.mulesoft.com -DmuleDeploy'
+=======
+ 				  sh 'mvn -f sapi/pom.xml clean package deploy -Dmule.username=${ANYPOINT_CREDENTIALS_USR} -Dmule.password=${ANYPOINT_CREDENTIALS_PSW} -Dmule.URL=https://anypoint.mulesoft.com -DmuleDeploy'
+>>>>>>> ac5c5cc08e40bb38b0f7b19cfad3bb38c5af45ee
       }
     }
       stage("Deploying pAPI") {
@@ -31,7 +35,11 @@
         ANYPOINT_CREDENTIALS = credentials('anypoint.credentials')
       }
         steps {
+<<<<<<< HEAD
           sh 'mvn -f papi/pom.xml clean package deploy -Dmule.username=${ANYPOINT_CREDENTIALS_USR} -Dmule.password=${ANYPOINT_CREDENTIALS_PSW} -Dmule.URL=https://anypoint.mulesoft.com -DmuleDeploy'
+=======
+ 				  sh 'mvn -f papi/pom.xml clean package deploy -Dmule.username=${ANYPOINT_CREDENTIALS_USR} -Dmule.password=${ANYPOINT_CREDENTIALS_PSW} -Dmule.URL=https://anypoint.mulesoft.com -DmuleDeploy'
+>>>>>>> ac5c5cc08e40bb38b0f7b19cfad3bb38c5af45ee
       }
     }
       stage("Deploying eAPI") {
@@ -39,7 +47,11 @@
         ANYPOINT_CREDENTIALS = credentials('anypoint.credentials')
       }
         steps {
+<<<<<<< HEAD
           sh 'mvn -f eapi/pom.xml clean package deploy -Dmule.username=${ANYPOINT_CREDENTIALS_USR} -Dmule.password=${ANYPOINT_CREDENTIALS_PSW} -Dmule.URL=https://anypoint.mulesoft.com -DmuleDeploy'
+=======
+ 				  sh 'mvn -f eapi/pom.xml clean package deploy -Dmule.username=${ANYPOINT_CREDENTIALS_USR} -Dmule.password=${ANYPOINT_CREDENTIALS_PSW} -Dmule.URL=https://anypoint.mulesoft.com -DmuleDeploy'
+>>>>>>> ac5c5cc08e40bb38b0f7b19cfad3bb38c5af45ee
       }
     }
     stage("Finishing Task") {
