@@ -31,7 +31,7 @@
 			            <muleVersion>4.1.4</muleVersion>
 			            <username>${mule.username}</username>
 			            <password>${mule.password}</password>
-			            <applicationName>eAPI-Mobile</applicationName>
+			            <applicationName>eAPI-Mobile-VS</applicationName>
 			            <environment>Training</environment>
 			            <region>us-east-2</region>
 			            <properties>
